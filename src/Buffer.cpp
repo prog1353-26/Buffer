@@ -24,6 +24,15 @@ Buffer::Buffer(const Buffer &other)
     }
 }
 
+// move CTor
+Buffer::Buffer(Buffer&& other) noexcept
+    : size_(other.size_), data_(other.data_)
+{
+    other.data_ = nullptr;
+    other.size_ = 0;
+}
+
+
 // ----------------------------------
 // Destructor
 // ----------------------------------
@@ -47,7 +56,21 @@ Buffer& Buffer::operator=(const Buffer& other) {
     return *this;
 }
 
+// move-assignment operator
+Buffer& Buffer::operator=(Buffer&& other)
+{
+    if(this != &other){
+        delete[] data_;         // free my memory on the heap
+        data_ = other.data_;    // steal other's memory on the heap
+        size_ = other.size_;
 
+        // other must be left in a valid state
+        // but without it's resource that I just stole.
+        other.data_ = nullptr;
+        other.size_ = 0;
+    }
+    return *this;
+}
 
 // ----------------------------------
 // operators

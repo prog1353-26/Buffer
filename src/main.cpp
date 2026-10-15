@@ -12,6 +12,13 @@ void showBuff(const Buffer& b) {
     std::cout << "]" << std::endl;
 }
 
+Buffer getABuff() {
+    Buffer tmp(10);
+    for(int i=0;i<10;++i)
+        tmp[i] = i*16;
+    return tmp;
+}
+
 int main()
 {
     std::cout << "Start demo" << std::endl;
@@ -21,7 +28,9 @@ int main()
         Buffer b(10);
         b[5] = 73;
 
-        a = b;
+        Buffer c(getABuff());
+
+        a = getABuff();
 
         showBuff(a);
         showBuff(b);
