@@ -12,9 +12,11 @@ private:
 public:
     Buffer() = default;
     Buffer(size_t n);
+    Buffer(const Buffer& other);
     ~Buffer();
 
     int& operator[](size_t inex);
     const int& operator[](size_t inex) const;
+    size_t size() const;
 };
 
