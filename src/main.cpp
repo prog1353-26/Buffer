@@ -21,7 +21,7 @@ int main()
         Buffer b(10);
         b[5] = 73;
 
-        Buffer c(b);
+        a = b;
 
         showBuff(a);
         showBuff(b);

@@ -15,6 +15,7 @@ public:
     Buffer(const Buffer& other);
     ~Buffer();
 
+    Buffer& operator=(const Buffer& other);
     int& operator[](size_t inex);
     const int& operator[](size_t inex) const;
     size_t size() const;
