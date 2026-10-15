@@ -1,0 +1,30 @@
+# --- CMake output -----------------------------------------------------------
+# Generated from CMakeLists.txt. Never commit it; delete it to start clean.
+build/
+out/
+
+# --- Leftovers from hand-run clang++ commands -------------------------------
+*.o
+*.obj
+*.exe
+*.out
+*.i
+*.s
+*.ii
+*.bc
+a.out
+
+# --- Tool caches ------------------------------------------------------------
+.cache/
+compile_commands.json
+CMakeUserPresets.json
+
+# --- Editor / OS noise ------------------------------------------------------
+# NOTE: .vscode/ itself is deliberately NOT ignored. The three files in it
+# (extensions, settings, launch) are part of the project and belong in Git.
+.vscode/ipch/
+.vscode/.browse.VC.db*
+*.swp
+*~
+.DS_Store
+Thumbs.db

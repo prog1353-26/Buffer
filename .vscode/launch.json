@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // Press F5 to build, then stop on your first breakpoint.
+            "name": "Debug (lldb-dap)",
+            "type": "lldb-dap",
+            "request": "launch",
+
+            // CMake Tools fills this in with whatever the current target
+            // builds — so renaming `app` in CMakeLists.txt changes nothing here.
+            "program": "${command:cmake.launchTargetPath}",
+
+            "args": [],
+            "cwd": "${workspaceFolder}",
+
+            // NOTE: do not add "console": "integratedTerminal" here. On Windows
+            // lldb-dap does not implement it, and the launch fails with an
+            // "Unimplemented" pop-up before your breakpoints are reached. The
+            // default gives your program its own console window, which is where
+            // its output appears and where std::cin reads from.
+
+            // Show a one-line summary next to each variable instead of making
+            // you expand every struct.
+            "enableAutoVariableSummaries": true,
+
+            // Build first. Nothing is more confusing than debugging the
+            // executable you built twenty minutes ago.
+            "preLaunchTask": "CMake: build"
+
+            // No path to lldb-dap.exe is set here on purpose: it lives beside
+            // clang++, which the setup script put on your PATH, and a hard-coded
+            // path would be wrong on half the machines in the class (clang64 on
+            // Intel/AMD, clangarm64 on ARM). If VS Code cannot find it, see the
+            // Troubleshooting section of README.md.
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    // VS Code offers to install these the first time the folder is opened.
+    // The setup script installs them for you; this is the safety net.
+    "recommendations": [
+        // C/C++ Extension Pack (Microsoft) — language support, IntelliSense,
+        // and CMake Tools + CMake language support bundled in.
+        "ms-vscode.cpptools-extension-pack",
+
+        // CMake Tools (Microsoft) — the Configure / Build / Launch buttons.
+        // Already inside the pack above; listed so it is obvious what we use.
+        "ms-vscode.cmake-tools",
+
+        // LLDB DAP (LLVM) — lets VS Code's debugger UI drive lldb. It does not
+        // ship a debugger of its own: it runs the lldb-dap.exe that came with
+        // your clang++, so the debugger always matches the compiler.
+        "llvm-vs-code-extensions.lldb-dap"
+    ]
+}

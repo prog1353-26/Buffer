@@ -1,0 +1,40 @@
+{
+    // ---------------------------------------------------------------- build
+    // Windows has several possible generators; name ours so CMake never goes
+    // looking for Visual Studio. Same as `-G "MinGW Makefiles"` on the CLI.
+    "cmake.generator": "MinGW Makefiles",
+
+    // Everything CMake generates goes here, and build/ is git-ignored.
+    // Never edit anything inside it; delete the folder to start clean.
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+
+    // Configure as soon as the folder opens, so IntelliSense works instantly.
+    "cmake.configureOnOpen": true,
+
+    // Show the Configure / Build / Debug buttons in the status bar.
+    "cmake.options.statusBarVisibility": "visible",
+
+    // ---------------------------------------------------------- IntelliSense
+    // Take the compiler, the flags and the include paths from CMake rather
+    // than guessing. This is why no compiler path is hard-coded here — the
+    // toolchain lives in clang64\bin on Intel/AMD and clangarm64\bin on ARM.
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.cppStandard": "c++20",
+
+    // ---------------------------------------------------------------- debug
+    // lldb-dap.exe sits beside clang++ on your PATH, so it is found without
+    // being named. Uncomment ONE of these only if VS Code reports it missing —
+    // and pick the line that matches your machine.
+    // "lldb-dap.executable-path": "C:/msys64/clang64/bin/lldb-dap.exe",
+    // "lldb-dap.executable-path": "C:/msys64/clangarm64/bin/lldb-dap.exe",
+
+    // --------------------------------------------------------------- editor
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.encoding": "utf8",
+    "[cpp]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    }
+}
